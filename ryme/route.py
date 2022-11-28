@@ -2,7 +2,12 @@
 
 
 from aiohttp import web
-from ryme import web_server
+
+routes = web.RouteTableDef()
+
+@routes.get("/", allow_head=True)
+async def root_route_handler(request):
+    return web.Response(text="https://telegram.me/iPrimeHub")
 
 
 
